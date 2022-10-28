@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.0/echarts.min.js"></script>
+    <title>電影期待度</title>
+</head>
+
+<body>
+
+    <table border="1">
+        <thead>
+            <tr id="rowtitle">
+                {% for th in columns %}
+                <th>{{th}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in values %}
+            <tr>
+                {% for td in value %}
+                <td>{{td}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        <div id="main" style="width: 100%;height:500px;"></div>
+
+        <script src="{{url_for('static',filename='js/charts.js')}}"></script>
+</body>
+
+</html>

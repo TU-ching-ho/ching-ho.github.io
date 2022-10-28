@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(245, 234, 218);
+}
+
+#contanier {
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#date {
+    width: 300px;
+    background-color: black;
+    color: aliceblue;
+}
+
+p {
+    background-color: black;
+    display: inline;
+    color: aliceblue;
+    padding: 10px;
+}
+
+table {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+td:first-child {
+    background-color: aqua;
+}
+
+#rowtitle {
+    background-color: rgb(4, 4, 68);
+    color: azure;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.nowtime {
+    padding: 10px;
+    margin: 5px;
+}
+
+.retime {
+    padding: 10px;
+    margin: 5px;
+}
+
+@media screen and (max-width:1024px) {
+    #contanier {
+        width: 100%;
+    }
+
+    table {
+        width: 90%;
+    }
+}

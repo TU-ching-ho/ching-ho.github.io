@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>自行車資訊</title>
+</head>
+
+<body onload="getTime()">
+    <div class="nowtime">
+        <p>現在時間:<span id="date">{{date}}</span></p><br>
+    </div>
+
+    <div>
+
+        <select name="station" id="station">
+            <option value="">請選擇要查詢的站點</option>
+            {% for value in site %}
+            <option value="{{value}}" id="station">{{value}}</option>
+            {% endfor %}
+        </select>
+        <input type="button" value="查詢" id="check">
+    </div>
+    <div id="result">
+        查詢結果
+        <ul style="list-style-type: none;">
+            站名:<li id="station_forlook"></li>
+            地址:<li id="address"></li>
+            格位數:<li id="capacity"></li>
+            可借車輛數:<li id="bikecount"></li>
+            可停空位數:<li id="spacecount"></li>
+            更新時間<li id="time"></li>
+        </ul>
+    </div>
+
+    <!--只有站名 </tbody>
+    <table border="1">
+        <thead>
+            <tr id="rowtitle">
+                {% for th in columns[0:1] %}
+                <th>{{th}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in site %}
+            <tr>
+
+                <td>{{value}}</td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody> -->
+
+
+    <!-- 全部表格</tbody>
+    <table border="1">
+        <thead>
+            <tr id="rowtitle">
+                {% for th in columns %}
+                <th>{{th}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in values %}
+            <tr>
+                {% for td in value %}
+                <td>{{td}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+
+        </tbody> -->
+
+
+
+    <script src="/static/js/bike.js"></script>
+</body>
+
+</html>
