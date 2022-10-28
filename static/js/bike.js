@@ -10,7 +10,7 @@ function getTime() {
 // $(document).ready(() => {
 //     getmybike()
 // });
-
+//台南自行車資訊
 let looking = document.querySelector("#check");
 const sta = document.querySelector("#station").value;
 
@@ -27,7 +27,7 @@ function getmybike() {
     let look_bikecount = document.querySelector("#bikecount");
     let look_spacecount = document.querySelector("#spacecount");
     let look_time = document.querySelector("#time");
-    console.log(sta);
+    //console.log(sta);
 
     $.ajax(
         {
@@ -48,7 +48,7 @@ function getmybike() {
                     //console.log(json['title'][index][0]);//車站
 
                     if (sta == json['title'][index][0]) {
-                        console.log(json['title'][index][0])
+                        //console.log(json['title'][index][0])
                         look_station.innerText = json['title'][index][0]
                         look_address.innerText = json['title'][index][1]
                         look_capacity.innerText = json['title'][index][2]
@@ -64,3 +64,50 @@ function getmybike() {
     )
 }
 
+//台北自行車資訊
+let taipei_looking = document.querySelector("#taipei_check");
+
+taipei_looking.addEventListener("click", () => {
+    get_my_taipeibike()
+})
+
+function get_my_taipeibike() {
+    const taipeista = document.querySelector("#taipeistation").value;
+    let look_station = document.querySelector("#taipeistation_forlook");
+    let look_address = document.querySelector("#taipeiaddress");
+    let look_capacity = document.querySelector("#taipeicapacity");
+    let look_bikecount = document.querySelector("#taipeibikecount");
+    let look_spacecount = document.querySelector("#taipeispacecount");
+    let look_time = document.querySelector("#taipeitime");
+    console.log(taipeista);
+
+    $.ajax(
+        {
+            url: "/taipeibike-json",
+            type: "POST",
+            datatype: "json",
+            success: (data) => {
+                //console.log(data);
+                var json = eval("(" + data + ")");
+                //console.log(json);
+
+
+                for (let index = 0; index < json.datas.length; index++) {
+
+
+                    if (taipeista == json['datas'][index][0]) {
+                        //console.log(json['title'][index][0])
+                        look_station.innerText = json['datas'][index][0]
+                        look_address.innerText = json['datas'][index][1]
+                        look_capacity.innerText = json['datas'][index][2]
+                        look_bikecount.innerText = json['datas'][index][3]
+                        look_spacecount.innerText = json['datas'][index][4]
+                        look_time.innerText = json['datas'][index][5]
+                    }
+
+                }
+            }
+        }
+
+    )
+}

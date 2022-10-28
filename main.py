@@ -1,10 +1,12 @@
 
+from base64 import encode
 from optparse import Values
 from flask import Flask, render_template, request, json
 from pandas import value_counts
 from movie import get_movies
 from bank import getbank
 from bike import get_bike, looking_bike
+from tbike import get_taipeibike
 
 app = Flask(__name__)
 
@@ -51,6 +53,7 @@ def getdate():
 @app.route('/bike')
 def getbike():
     columns, values, site = get_bike()
+    taipei_columns, taipei_values, taipei_site = get_taipeibike()
     return render_template('./bike.html', **locals())
 
 
@@ -60,6 +63,13 @@ def bike_json():
     titles = [value[0:] for value in values]
 
     return json.dumps({'title': titles}, ensure_ascii=False)
+
+
+@app.route('/taipeibike-json', methods=['POST'])
+def taipeibike_json():
+    t_columns, t_values, site = get_taipeibike()
+    datas = [value[0:] for value in t_values]
+    return json.dumps({"datas": datas}, ensure_ascii=False)
 
 
 if __name__ == '__main__':
