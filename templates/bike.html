@@ -6,37 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/bike.css">
     <title>自行車資訊</title>
 </head>
 
 <body onload="getTime()">
-    <div class="nowtime">
-        <p>現在時間:<span id="date">{{date}}</span></p><br>
-    </div>
-    <h3>台南自行車查詢</h3>
-    <div class="tainan">
-        <div>
-            <select name="station" id="station">
-                <option value="">請選擇要查詢的站點</option>
-                {% for value in site %}
-                <option value="{{value}}" id="station">{{value}}</option>
-                {% endfor %}
-            </select>
-            <input type="button" value="查詢" id="check">
-        </div>
-        <div id="result">
-            查詢結果
-            <ul style="list-style-type: none;">
-                站名:<li id="station_forlook"></li>
-                地址:<li id="address"></li>
-                格位數:<li id="capacity"></li>
-                可借車輛數:<li id="bikecount"></li>
-                可停空位數:<li id="spacecount"></li>
-                更新時間:<li id="time"></li>
-            </ul>
-        </div>
-    </div>
-    <!--只有站名 </tbody>
+    <div id="contanier">
+        <div id="myapp">
+            <div class="nowtime">
+                <p id="rightnow">現在時間:<span id="date">{{date}}</span></p><br>
+            </div>
+
+            <div class="tainan">
+                <h2>台南自行車查詢</h2>
+                <div>
+                    <select name="station" id="station">
+                        <option value="">請選擇要查詢的站點</option>
+                        {% for value in site %}
+                        <option value="{{value}}" id="station">{{value}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="button" value="查詢" id="check">
+                </div>
+                <div id="result">
+                    站名:<span id="station_forlook"></span><br>
+                    地址:<span id="address"></span><br>
+                    格位數:<span id="capacity"></span><br>
+                    可借車輛數:<span id="bikecount"></span><br>
+                    可停空位數:<span id="spacecount"></span><br>
+                    更新時間:<span id="time"></span>
+                </div>
+
+            </div>
+            <!-- <div id="result">
+                <ul style="list-style-type: none;">
+
+                    站名:<li id="station_forlook"></li>
+                    地址:<li id="address"></li>
+                    格位數:<li id="capacity"></li>
+                    可借車輛數:<li id="bikecount"></li>
+                    可停空位數:<li id="spacecount"></li>
+                    更新時間:<li id="time"></li>
+                </ul>
+            </div> -->
+
+            <!--只有站名 </tbody>
     <table border="1">
         <thead>
             <tr id="rowtitle">
@@ -57,7 +71,7 @@
         </tbody> -->
 
 
-    <!-- 全部表格</tbody>
+            <!-- 全部表格</tbody>
     <table border="1">
         <thead>
             <tr id="rowtitle">
@@ -77,9 +91,9 @@
 
         </tbody> -->
 
-    <!--以下為台北自行車資訊-->
+            <!--以下為台北自行車資訊-->
 
-    <!-- <table border="1">
+            <!-- <table border="1">
         <thead>
             <tr id="rowtitle">
                 {% for th in taipei_columns %}
@@ -98,33 +112,42 @@
 
         </tbody> -->
 
-    <h3>台北自行車查詢</h3>
 
-    <div class="taipei">
-        <div>
-            <select name="taipeistation" id="taipeistation">
-                <option value="">請選擇要查詢的站點</option>
-                {% for value in taipei_site %}
-                <option value="{{value}}" id="taipeistation">{{value}}</option>
-                {% endfor %}
-            </select>
-            <input type="button" value="查詢" id="taipei_check">
-        </div>
-        <div id="taipei_result">
-            查詢結果
-            <ul style="list-style-type: none;">
-                站名:<li id="taipeistation_forlook"></li>
-                地址:<li id="taipeiaddress"></li>
-                格位數:<li id="taipeicapacity"></li>
-                可借車輛數:<li id="taipeibikecount"></li>
-                可停空位數:<li id="taipeispacecount"></li>
-                更新時間:<li id="taipeitime"></li>
-            </ul>
-        </div>
-    </div>
+            <div class="taipei">
+                <h2>台北自行車查詢</h2>
+                <div>
+                    <select name="taipeistation" id="taipeistation">
+                        <option value="">請選擇要查詢的站點</option>
+                        {% for value in taipei_site %}
+                        <option value="{{value}}" id="taipeistation">{{value}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="button" value="查詢" id="taipei_check">
+                </div>
 
 
-    <!-- <table border="1">
+                <div id="result">
+                    站名:<span id="taipeistation_forlook"></span><br>
+                    地址:<span id="taipeiaddress"></span><br>
+                    格位數:<span id="taipeicapacity"></span><br>
+                    可借車輛數:<span id="taipeibikecount"></span><br>
+                    可停空位數:<span id="taipeispacecount"></span><br>
+                    更新時間:<span id="taipeitime"></span>
+                </div>
+
+                <!-- <ul style="list-style-type: none;">
+                        站名:<li id="taipeistation_forlook"></li>
+                        地址:<li id="taipeiaddress"></li>
+                        格位數:<li id="taipeicapacity"></li>
+                        可借車輛數:<li id="taipeibikecount"></li>
+                        可停空位數:<li id="taipeispacecount"></li>
+                        更新時間:<li id="taipeitime"></li>
+                    </ul> -->
+
+            </div>
+
+
+            <!-- <table border="1">
         <thead>
             <tr id="rowtitle">
                 {% for th in taipei_columns[0:1] %}
@@ -142,7 +165,8 @@
             {% endfor %}
 
         </tbody> -->
-
+        </div>
+    </div>
     <script src="/static/js/bike.js"></script>
 </body>
 
