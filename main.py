@@ -57,6 +57,12 @@ def getbike():
     return render_template('./bike.html', **locals())
 
 
+@app.route('/speed')
+def getspeed():
+
+    return render_template('./speed.html', **locals())
+
+
 @app.route('/bike-json', methods=['POST'])
 def bike_json():
     columns, values = looking_bike()

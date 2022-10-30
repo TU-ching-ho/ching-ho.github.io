@@ -36,6 +36,7 @@ def get_taipeibike():
                   "可停空位數": spacecount,
                   "更新時間": time
                   }
+
     taipei_bike = pd.DataFrame(tbike_dict)
 
     return taipei_bike.columns.tolist(), taipei_bike.values.tolist(), site

@@ -8,3 +8,22 @@ function getTime() {
 }
 
 
+$(document).ready(() => {
+    changecolor()
+});
+
+
+function changecolor() {
+    let table = document.getElementById("mybank")
+    let tds = table.getElementsByTagName("td")
+    for (i = 0; i < tds.length; i++) {
+        //console.log(tds[i].innerText);
+        if (tds[i].innerText == "-") {
+            tds[i].style.backgroundColor = "black"
+            console.log(tds[i]);
+        }
+        //console.log(tds[i]);
+    }
+}
+
+//console.log(tds[i].innerText); td訊息

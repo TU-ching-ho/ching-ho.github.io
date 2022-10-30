@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/speed.css">
+    <title>跑步速度計算</title>
+</head>
+
+<body>
+    <div id="contanier">
+        <form action="" class="speedcount">
+            <h1>跑步速度計算機</h1>
+            <input type="number" name="distance" id="distance" placeholder="請輸入距離">
+            <input type="number" name="second" id="second" placeholder="請輸入秒數">
+            <p>
+                <button type="button" id="calc">計算</button>
+                <button type="reset" id="reset">重設</button>
+            </p>
+            <div id="comment">
+                平均速度(百公尺/分鐘):<span class="speed"></span>
+            </div>
+        </form>
+    </div>
+    <script src="/static/js/speed.js"></script>
+</body>
+
+</html>

@@ -40,7 +40,18 @@ function movies_expect(xdata, ydata) {
         title: {
             text: 'yahoo電影'
         },
-        tooltip: {},
+        toolbox: {
+            show: true,
+            orient: 'vertical',
+            left: 'left',
+            top: 'center',
+            feature: {
+                magicType: { show: true, type: ['line', 'bar', 'tiled'] },
+                restore: { show: true },
+                saveAsImage: { show: true }
+            }
+        },
+        tooltip: { trigger: 'axis' },
         legend: {},
         xAxis: {
             data: xdata

@@ -48,6 +48,15 @@ def looking_bike():
                       'AvaliableBikeCount', 'AvaliableSpaceCount', 'UpdateTime'))
 
     site, address, capacity, bikecount, spacecount, time = [], [], [], [], [], []
+#處理時間"T"
+    for i in df["UpdateTime"]:
+        x = list(i)
+        for y in range(len(x)):
+            if x[y] == "T":
+                x[y] = ","
+        mytime = "".join(x)
+
+    df["UpdateTime"] = mytime
 
     for a in df["StationName"]:
         site.append(a)

@@ -5,17 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index.css">
     <title>首頁</title>
 </head>
 
 <body onload="getTime()">
-    <h1>hello,{{name}}</h1>
-    <p id="date">{{date}}</p>
-
-    <a href="./bank" target="_blank">銀行匯率資訊</a><br>
-    <a href="./movie" target="_blank">yahoo電影期待度</a><br>
-    <a href="./bike" target="_blank">自行車資訊</a>
-
+    <div class="contanier">
+        <h1>hello,{{name}}</h1>
+        <p id="date">{{date}}</p>
+        <div class="mylist">
+            <h2>實作項目</h2>
+            <a href="./bank" target="_blank">銀行匯率資訊</a><br>
+            <a href="./movie" target="_blank">yahoo電影期待度</a><br>
+            <a href="./bike" target="_blank">自行車資訊</a><br>
+            <a href="./speed" target="_blank">跑步速度計算</a>
+        </div>
+    </div>
     <script src="/static/js/main.js"></script>
 </body>
 

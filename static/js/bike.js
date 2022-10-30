@@ -12,9 +12,14 @@ function getTime() {
 // });
 //台南自行車資訊
 let looking = document.querySelector("#check");
-const sta = document.querySelector("#station").value;
+let sta = document.querySelector("#station").value;
 
 looking.addEventListener("click", () => {
+    let sta = document.querySelector("#station").value;
+    if (sta == "") {
+        alert("請選擇站名!");
+        return;
+    }
     getmybike()
 })
 
@@ -68,7 +73,14 @@ function getmybike() {
 let taipei_looking = document.querySelector("#taipei_check");
 
 taipei_looking.addEventListener("click", () => {
+    const taipeista = document.querySelector("#taipeistation").value;
+    console.log(taipeista);
+    if (taipeista == "") {
+        alert("請選擇站名!");
+        return;
+    }
     get_my_taipeibike()
+
 })
 
 function get_my_taipeibike() {

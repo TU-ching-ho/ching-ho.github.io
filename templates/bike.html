@@ -111,7 +111,7 @@
             {% endfor %}
 
         </tbody> -->
-
+            <hr>
 
             <div class="taipei">
                 <h2>台北自行車查詢</h2>
@@ -119,7 +119,7 @@
                     <select name="taipeistation" id="taipeistation">
                         <option value="">請選擇要查詢的站點</option>
                         {% for value in taipei_site %}
-                        <option value="{{value}}" id="taipeistation">{{value}}</option>
+                        <option value="{{value}}" id="taipeistations">{{value}}</option>
                         {% endfor %}
                     </select>
                     <input type="button" value="查詢" id="taipei_check">

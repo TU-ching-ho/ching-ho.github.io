@@ -27,13 +27,15 @@ body {
 
 #rightnow {
     margin: 5px;
-    padding-top: 10px;
+    padding-top: 15px;
+    font-size: 20px;
     color: aliceblue;
 }
 
 h2 {
     padding: 3x;
     margin: 5px;
+    margin-bottom: 10px;
 }
 
 #result {
@@ -45,4 +47,14 @@ h2 {
 
 span {
     padding: 3px;
+}
+
+hr {
+    margin: 0px;
+    border-top: 5px dotted rgb(14, 12, 12);
+}
+
+input[type="button"]:hover {
+    background-color: rgb(33, 231, 165);
+    transition: 0.8s;
 }

@@ -1,0 +1,23 @@
+.contanier {
+    background-color: rgb(238, 164, 111);
+    width: 70% auto;
+    margin: 100px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+body {
+    background-color: bisque;
+}
+
+
+
+.mylist {
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    margin: 15px;
+}
