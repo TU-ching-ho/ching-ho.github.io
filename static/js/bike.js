@@ -12,7 +12,6 @@ function getTime() {
 // });
 //台南自行車資訊
 let looking = document.querySelector("#check");
-let sta = document.querySelector("#station").value;
 
 looking.addEventListener("click", () => {
     let sta = document.querySelector("#station").value;
@@ -46,8 +45,6 @@ function getmybike() {
                 //console.log(json.title.length);
                 //console.log(json['title'][0][0]);
                 //console.log(json['title'])
-
-
                 for (let index = 0; index < json.title.length; index++) {
                     //車站訊息json['title'][index][x]
                     //console.log(json['title'][index][0]);//車站

@@ -7,3 +7,7 @@
 body {
     background-color: rgb(94, 90, 86);
 }
+
+#main {
+    padding: 20px;
+}
